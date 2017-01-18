@@ -1,0 +1,16 @@
+<h1>Time tracking tool</h1>
+
+<h2><%= @project.name %></h2>
+
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <%= entry.hours %> h
+      <%= entry.minutes %> m -
+      <%= entry.date %> -
+      <%= entry.comments %>
+      <%= link_to "Edit entry", "/projects/#{@project.id}/time_entries/#{entry.id}/edit" %>
+      <%= link_to "Delete", project_time_entry_path(@project, entry), method: :delete, data: {confirm: "Are you sure?"} %>
+    </li>
+  <% end %>
+</ul>

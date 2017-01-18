@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Auction</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <h1>Rails Auction Site</h1>
+
+    <div id="top_bar">
+      <% if user_signed_in? %>
+      <p><%= current_user.name %> | 
+      <%= link_to 'Sign out', destroy_user_session_path, method: 'DELETE' %></p>
+      <% else %>
+      <p>
+        <%= link_to 'Sign_up', new_user_registration_path %> |
+        <%= link_to 'Sign_in', new_user_session_path %>
+      </p>
+      <% end %>
+    </div>
+
+    <%= yield %>
+    <h3>A dausdasKreuz page :)</h3>
+  </body>
+</html>

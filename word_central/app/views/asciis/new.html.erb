@@ -1,0 +1,16 @@
+<!-- app/views/asciis/new.html.erb -->
+
+<h1>Word Central</h1>
+
+<h2>Submit text for ascii</h2>
+
+<form action="/asciis" method="post">
+  <div>
+    <label for="text_to_ascii">Text</label>
+    <textarea name="text_to_ascii[text_to_convert]" id="text_to_ascii" rows="8" cols="40"></textarea>
+  </div>
+
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <button type="submit" name="button">Submit text</button>
+</form>

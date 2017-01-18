@@ -1,0 +1,10 @@
+<% if @product %>
+  <p>Product data</p>
+  <%= @product.title %>
+  <%= @product.description %>
+  <!-- <%= link_to "Delete", "/users/#{@product.id}", method: :delete, data: {confirm: "Are you sure?"} %> -->
+  <!-- <p>If you want to add a product, please click <%= link_to "here", "/users/#{@user.id}/products/new" %></p> -->
+<% else %>
+  This product does not exist.
+  <!-- <p><%= link_to "Back home", "/" %></p> -->
+<% end %>

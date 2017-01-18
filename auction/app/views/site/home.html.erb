@@ -1,0 +1,9 @@
+<h2>A page for yours auctions and get all you need</h2>
+
+<p>Are you a user?. If not, please create a <%= link_to "new user", "/users/new" %></p>
+
+<% if flash[:notice] %>
+  <div><%= flash[:notice] %></div>
+<% end %>
+
+<p>If you are a user, select your profile (pending to do show users index)</p>

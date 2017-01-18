@@ -1,0 +1,31 @@
+<h2><%= current_user.name %>, this is your rails auction site</h2>
+
+User data
+<br>
+<%= current_user.name %> - <%= current_user.email %>  -
+<%= link_to "Delete user", user_path, method: :delete, data: {confirm: "Are you sure?"} %>
+<p></p>
+<p></p>
+Your products in auction
+<br>
+<% @products.each do |product| %>
+  <%= product.title %> - <%= product.description %> - <%= product.deadline %>
+  <br>
+<% end %>
+<%= link_to "All user products", user_products_path(current_user) %>
+<br>
+
+<p></p>
+
+Products avaible to bid
+<br>
+<% if @products_bidded %>
+  <% @products_bidded.each do |pb| %>
+    <%= pb.title %> - <%= pb.description %>
+    <br>
+  <% end %>
+<% else %>
+  No products bidded
+  <br>
+<% end %>
+If you want to bid <%= link_to "click here", "/users/#{current_user.id}/products_all" %>

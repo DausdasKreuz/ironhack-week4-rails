@@ -1,0 +1,8 @@
+<form action="/calculate" method="POST">
+  <input type="text" name="first_num" placeholder="First number" >
+  <input type="text" name="second_num" placeholder="Second number" >
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <button type="submit">Add</button>
+</form>
+
+<%= link_to "Home", "/" %>

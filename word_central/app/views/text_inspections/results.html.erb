@@ -1,0 +1,20 @@
+<h1>Word Central</h1>
+
+<h2>Submited text.</h2>
+
+<p>
+  <% @repetitions_sorted[0..9].each do |i| %>
+    <%= i[0].to_s + ": " + i[1].to_s %>
+  <% end %>
+</p>
+<p>
+  <%= @word_count %>
+</p>
+<p>
+  <%= @lecture_time %>
+</p>
+
+<p><%= @words_repited %></p>
+<p><%= @appears %></p>
+
+<%= link_to 'Home', '/' %>

@@ -1,0 +1,29 @@
+<%= @user.name %>
+
+User products:
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      Product: <%= link_to "#{product.title}", user_product_path(product) %> -
+      <%= product.description %> -
+      <%= product.deadline %> -
+      <%= link_to "Delete product", user_product_path(@user, product), method: :delete, data: {confirm: "Are you sure?"} %>
+    </li>
+  <% end %>
+</ul>
+
+Products to bid
+<ul>
+  <% @other_products.each do |product| %>
+    <li>
+      Product: <%= link_to "#{product.title}", user_product_path(product.id) %> -
+      <%= product.description %> -
+      <%= product.deadline %> -
+      <%= link_to "Make a bid", user_product_bid_path(@user, product) %>
+    </li>
+  <% end %>
+</ul>
+
+
+<%= link_to "Add product", new_user_product_path(@user) %>
+<%= link_to "User page", user_path(@user) %>
