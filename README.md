@@ -11,11 +11,11 @@ This is the class exercises code and small projects.
 
 - Project - Word central
 
-**Day 2: DOM and responsive design**
+**Day 2: Database**
 
 - Project - Address book
 
-**Day 3: javascript basics**
+**Day 3: CRUD and validations**
 
 - Project - Auction
 
